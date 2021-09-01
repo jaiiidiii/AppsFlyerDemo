@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tps.appsflyerdemo.appsflyer">
+    package="com.tps.appsflyerdemo">
    <application
         android:label="appsflyer"
         android:icon="@mipmap/ic_launcher">
@@ -37,5 +37,10 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+      <receiver android:name="com.appsflyer.SingleInstallBroadcastReceiver" android:exported="true">
+		<intent-filter>
+			 <action android:name="com.android.vending.INSTALL_REFERRER" />
+		 </intent-filter>
+	    </receiver>
     </application>
 </manifest>

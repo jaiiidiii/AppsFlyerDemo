@@ -33,9 +33,19 @@ class _AppsFlyerHomeState extends State<AppsFlyerHome> {
                   color: Colors.blue,
                   textColor: Colors.white,
                   child: Text("Press Button to initialte event"),
+                  onPressed: () async {
+                    await appsflyerSdk.logEvent(
+                        "af_content_view", {"af_content": "JD clicked"});
+                    // appsflyerSdk.onDeepLinking(callback)
+                    appsflyerSdk.setPushNotification(true);
+                  }),
+              MaterialButton(
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  child: Text("Press Button to initialte second event"),
                   onPressed: () {
                     appsflyerSdk.logEvent(
-                        "JD Test", {"JD Pressed Key": "JD Pressed Value"});
+                        "raxa Test", {"af_content": "raxa Pressed Value"});
                     // appsflyerSdk.onDeepLinking(callback)
                     appsflyerSdk.setPushNotification(true);
                   })
